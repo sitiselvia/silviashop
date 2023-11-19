@@ -253,7 +253,7 @@ header
 }
 
 .header-area .main-nav .logo {
-  line-height: 100px;
+  line-height: 80px;
   color: #fff;
   font-size: 28px;
   font-weight: 700;
@@ -333,7 +333,7 @@ header
 }
 
 .header-area .main-nav .nav li.submenu:after {
-  font-family: FontAwesome;
+  font-family: Monospace;
   content: "\f107";
   font-size: 12px;
   color: #2a2a2a;
@@ -1460,9 +1460,11 @@ Explore
 }
 
 #explore .left-content .main-border-button a {
-  color: #2a2a2a;
+  color: #25D366;
   border-color: #2a2a2a;
   margin-top: 35px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #explore .left-content .main-border-button a:hover {
@@ -1575,9 +1577,11 @@ Social
 }
 
 #social .left-content .main-border-button a {
-  color: #2a2a2a;
+  color: #EE4D2D;
   border-color: #2a2a2a;
   margin-top: 35px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #social .left-content .main-border-button a:hover {
