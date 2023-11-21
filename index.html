@@ -4,9 +4,7 @@
     <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>SilviaShop</title>
@@ -32,6 +30,56 @@
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
+    <a href="#" class="notification">Install SilviaShop</a>
+
+    <style>
+    .notification {
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        padding: 15px 26px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        border-radius: 2px;
+        display: none;
+    }
+
+    .notification.show {
+        display: block;
+    }
+    </style>
+
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        showInstallPromotion();
+        });
+
+        function showInstallPromotion() {
+        const notification = document.querySelector('.notification');
+        notification.classList.add('show');
+        notification.addEventListener('click', (e) => {
+            e.preventDefault();
+            notification.classList.remove('show');
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+            });
+        });
+        }
+    </script>
 
     </head>
     
