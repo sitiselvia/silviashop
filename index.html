@@ -31,56 +31,6 @@
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
-    <a href="#" class="notification">Install SilviaShop</a>
-
-    <style>
-    .notification {
-        background-color: #4CAF50;
-        color: white;
-        text-decoration: none;
-        padding: 15px 26px;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        margin-right: 30px;
-        margin-bottom: 30px;
-        border-radius: 2px;
-        display: none;
-    }
-
-    .notification.show {
-        display: block;
-    }
-    </style>
-
-    <script>
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        showInstallPromotion();
-        });
-
-        function showInstallPromotion() {
-        const notification = document.querySelector('.notification');
-        notification.classList.add('show');
-        notification.addEventListener('click', (e) => {
-            e.preventDefault();
-            notification.classList.remove('show');
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the install prompt');
-            } else {
-                console.log('User dismissed the install prompt');
-            }
-            deferredPrompt = null;
-            });
-        });
-        }
-    </script>
-
     </head>
     
     <body>
